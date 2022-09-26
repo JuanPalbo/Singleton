@@ -7,7 +7,7 @@
 Código de ejemplo del patrón [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern)
 
 En este ejemplo la clase `Greeter` es un singleton: solo existe una instancia de esa clase a la cual se accede mediante
-una propiedad de clase `Instance` de tipo `Greeter`. No es posible crear instancias de esa clase porque el constructor `Greeter()` es privado. Al acceder por primera vez a la propiedad de clase `Instance` se crea la única instancia de `Greeter` y se guarda en la variable de clase privada `instance`; luego cada vez que se accede a la propiead de clase `Instance` se retorna esa única instancia.
+una propiedad de clase `Instance` de tipo `Greeter`. No es posible crear instancias de esa clase porque el constructor `Greeter()` es privado. Al acceder por primera vez a la propiedad de clase `Instance` se crea la única instancia de `Greeter` y se guarda en la variable de clase privada `instance`; luego cada vez que se accede a la propiedad de clase `Instance` se retorna esa única instancia.
 
 Además la clase `Greeter` implementa un método de instancia `void SayHiToTheWorld()` que es el verdadero propósito de esta
 clase.
@@ -29,7 +29,10 @@ static void Main(string[] args)
 `void SayHiToTheWorld()`.
 
 El tipo genérico `Singleton<T>` crea una instancia de `T`; para que eso sea posible es necesario agregar una restricción
-en la declaración del tipo genérico para forzar que T tenga un constuctor sin parámetros; eso se logra con la
+en la declaración del tipo genérico para forzar que T tenga un constructor sin parámetros; eso se logra con la
 declaración `Singleton<T> where T : new()`.
 
 > ⚠️ Los casos de prueba **no** pasan. Pasarán una vez que introduzcan correctamente la clase `Singleton<T>`.
+
+> ℹ️
+*Para más información sobre las restricciones que podemos aplicar sobre un tipo parámetro en C# ver la [documentación oficial de .NET](https://learn.microsoft.com/es-mx/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters)*
